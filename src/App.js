@@ -1,29 +1,11 @@
 
 import './App.css';
-import ButtonC from './components/classcomponents/button';
-import FormC from './components/classcomponents/form';
-import ImageC from './components/classcomponents/img';
-import ListC from './components/classcomponents/list';
-import TableC from './components/classcomponents/table';
-import ButtonF from './components/functioncomponents/button';
-import FormF from './components/functioncomponents/form';
-import ImageF from './components/functioncomponents/img';
-import TablEF from './components/functioncomponents/table';
+import Store from './state/mounting/store';
 
 function App() {
   return(
-    <div class="container" >
-   <ButtonC></ButtonC>  
-   <ListC></ListC>
-   <ImageC></ImageC>
-   <ButtonF></ButtonF>
-   <ImageF></ImageF>
-   <listF></listF>
-   <TableC></TableC>
-   <TablEF></TablEF>
-   <FormC></FormC>
-   <FormF></FormF>
-   <h2>hi This feature added</h2>
+    <div className="container" >
+  <Store/>
     </div>
    );
   //   <div className="App">
