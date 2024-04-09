@@ -9,6 +9,23 @@ class Store extends Component {
     }
 
 
+    lowtohigh=()=>{
+        const result=this.state.products.sort((a,b)=>a.price-b.price)
+        this.setState({
+            products:result
+               
+            }
+        )
+    }
+    hightolow=()=>{
+        const result=this.state.products.sort((a,b)=>b.price-a.price)
+        this.setState(
+            {
+                products:result
+            }
+        )
+    }
+
 
     fetchdata = async () => {
 
@@ -27,25 +44,30 @@ class Store extends Component {
      } )
     }
 
+
     render() {
         return (
 
             <>
             <div className="Name">
                 <h3>product list</h3>
+                <button on onClick={this.lowtohigh}>Filter from low to high</button>
+                <button on onClick={this.hightolow}>Filter from high to low</button>
                 </div>
                 {
                     this.state.products.length > 0
                         ?
                         <div className="list">
+                         
                             {
 
                                 this.state.products.map((eachObject,index) => {
+                                    
                                     return (
 
                                         <div className="cards">
                                             <h4>{eachObject.title}</h4>
-                                            <img src={eachObject.image} alt={"title"} width={100} height={60} />
+                                            <img src={eachObject.image} alt={"title"} width={100} height={60}/>
                                             <h3>{eachObject.category}</h3>
                                             <h3>₹{eachObject.price}</h3>
                                             <button style={{Top:"45px",backgroundColor:"skyblue"}} onClick={()=>this.delete(index)}>Delete</button>
